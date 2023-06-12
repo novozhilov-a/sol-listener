@@ -1,0 +1,31 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+apply plugin: 'idea'
+
+idea {
+    module {
+        downloadJavadoc = true
+        downloadSources = true
+    }
+}
+
+group 'com.novo'
+version '1.0'
+
+repositories {
+    mavenCentral()
+}
+application {
+    mainClass = 'com.novo.Subscriber'
+}
+dependencies {
+    implementation group: 'com.solace', name: 'solace-messaging-client', version: '1.2.0'
+//    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+//    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+}
+
+//test {
+//    useJUnitPlatform()
+//}
